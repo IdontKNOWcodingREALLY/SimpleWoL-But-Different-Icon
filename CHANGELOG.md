@@ -1,4 +1,9 @@
 # Changelog
+## [1.3.0] - 26-02-27
+
+### Feature
+
+- Icon change and minor changes from original
 
 ## [1.2.0] - 23-08-21
 
