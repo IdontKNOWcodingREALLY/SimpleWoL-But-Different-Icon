@@ -33,7 +33,7 @@ jobs:
         run: dart run flutter_launcher_icons
         
       - name: Build Release APK
-        run: flutter build apk --release --no-shrink
+        run: flutter build apk --release
 
       # FIX 2: This creates a temporary signature on the server and signs the APK so your phone will let you install it
       - name: Auto-Sign APK for Installation
