@@ -21,20 +21,21 @@ jobs:
       - name: Setup Flutter
         uses: subosito/flutter-action@v2
         with:
+          flutter-version: "3.10.5"
           channel: 'stable'
           cache: true
           
       - name: Get dependencies
         run: flutter pub get
 
-      # FIX 1: This forces the app to crop and apply your new icon images
       - name: Update App Icons
         run: dart run flutter_launcher_icons
         
+      # Here we are running the pure release build WITHOUT --no-shrink
+      # This forces the compiler to strip dead code and optimize performance
       - name: Build Release APK
         run: flutter build apk --release
 
-      # FIX 2: This creates a temporary signature on the server and signs the APK so your phone will let you install it
       - name: Auto-Sign APK for Installation
         run: |
           keytool -genkey -v -keystore temp_key.keystore -alias temp_alias -keyalg RSA -keysize 2048 -validity 10000 -storepass temp_password -keypass temp_password -dname "CN=SimpleWOL,O=Personal,C=US"
