@@ -55,6 +55,7 @@ The app stores the added devices in a `json` file which can be exported and impo
     "modified": "2023-04-14T14:18:14.997081"
   }
 ]
+```
 
 ## Download
 
