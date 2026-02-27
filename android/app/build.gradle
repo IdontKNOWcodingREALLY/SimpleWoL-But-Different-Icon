@@ -26,6 +26,9 @@ apply plugin: 'kotlin-android'
 apply from: "$flutterRoot/packages/flutter_tools/gradle/flutter.gradle"
 
 android {
+    // 1. Added the missing namespace to fix the compile error
+    namespace "com.henrikherzig.simplewol"
+    
     compileSdkVersion flutter.compileSdkVersion
     ndkVersion flutter.ndkVersion
 
@@ -43,28 +46,31 @@ android {
     }
 
     defaultConfig {
-        // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
         applicationId "com.henrikherzig.simplewol"
-        // You can update the following values to match your application needs.
-        // For more information, see: https://docs.flutter.dev/deployment/android#reviewing-the-gradle-build-configuration.
-        minSdkVersion 19 //flutter.minSdkVersion
+        minSdkVersion 19 
         targetSdkVersion flutter.targetSdkVersion
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
     }
 
+    // 2. We keep the signingConfigs block but we won't use it in the release build
+    // This prevents errors when the environment variables (secrets) are missing
     signingConfigs {
         release {
             storeFile file("../key.jks")
-            storePassword = "$System.env.KEY_PASSWORD"
-            keyAlias = "release"
-            keyPassword = "$System.env.ALIAS_PASSWORD"
+            storePassword System.getenv("KEY_PASSWORD")
+            keyAlias "release"
+            keyPassword System.getenv("ALIAS_PASSWORD")
         }
     }
 
     buildTypes {
         release {
-            signingConfig signingConfigs.release
+            // 3. Removed 'signingConfig signingConfigs.release' 
+            // This allows the APK to build without needing your private key secrets.
+            
+            minifyEnabled false
+            shrinkResources false
         }
     }
 }
