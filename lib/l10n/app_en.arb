@@ -178,7 +178,7 @@
   "@ABOUT": {},
   "aboutDevice": "Device Info",
   "aboutInfoTitle": "About this App",
-  "aboutInfoText": "A simple tool to wake devices in the local network remotely if they are turned off. This app tries to make this process easy for the user.",
+  "aboutInfoText": "A simple tool to wake devices in the local network remotely if they are turned off. This app tries to make this process easy for the user. but with diffrent icon ",
   "aboutOpenSourceTitle": "Open Source",
   "aboutOpenSourceCodeButton": "Source Code",
   "aboutOpenSourceLicenseButton": "Licenses",

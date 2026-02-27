@@ -161,7 +161,7 @@ class AppConstants {
   static const sourceCodeIcon = Icons.code;
   static const licenseIcon = Icons.article;
   static const sourceCodeLink =
-      'https://github.com/herzhenr/simple-wake-on-lan';
+      'https://github.com/IdontKNOWcodingREALLY/SimpleWoL-But-Different-Icon';
 
   /// Other
   static const screenPadding =
