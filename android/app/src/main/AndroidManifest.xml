@@ -1,5 +1,5 @@
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.IdontKNOWcodingREALLY.SimpleWoLButDifferentIcon">
+<manifest xmlns:android="com.idontknowcodingreally.simplewolbutdifferenticon"
+    package="com.idontknowcodingreally.simplewolbutdifferenticon">
    <application
         android:label="Simple WoL But Different Icon"
         android:name="${applicationName}"

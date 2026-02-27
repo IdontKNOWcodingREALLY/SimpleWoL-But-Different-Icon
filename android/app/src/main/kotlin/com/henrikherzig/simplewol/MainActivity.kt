@@ -1,4 +1,4 @@
-package com.IdontKNOWcodingREALLY.SimpleWoLButDifferentIcon
+package com.idontknowcodingreally.simplewolbutdifferenticon
 
 import io.flutter.embedding.android.FlutterActivity
 
