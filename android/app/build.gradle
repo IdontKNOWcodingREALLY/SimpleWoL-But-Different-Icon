@@ -66,8 +66,8 @@ android {
 
     buildTypes {
         release {
-            // 3. Removed 'signingConfig signingConfigs.release' 
-            // This allows the APK to build without needing your private key secrets.
+            // This line forces the release APK to be signed so it can be installed
+            signingConfig signingConfigs.debug 
             
             minifyEnabled false
             shrinkResources false
