@@ -25,18 +25,25 @@ jobs:
           channel: 'stable'
           cache: true
           
-      # FIX: Force new assets/images to load
-      - name: Clean build cache
-        run: flutter clean
-
       - name: Get dependencies
         run: flutter pub get
+
+      # FIX 1: This forces the app to crop and apply your new icon images
+      - name: Update App Icons
+        run: dart run flutter_launcher_icons
         
       - name: Build Release APK
         run: flutter build apk --release --no-shrink
+
+      # FIX 2: This creates a temporary signature on the server and signs the APK so your phone will let you install it
+      - name: Auto-Sign APK for Installation
+        run: |
+          keytool -genkey -v -keystore temp_key.keystore -alias temp_alias -keyalg RSA -keysize 2048 -validity 10000 -storepass temp_password -keypass temp_password -dname "CN=SimpleWOL,O=Personal,C=US"
+          BUILD_TOOLS_VERSION=$(ls $ANDROID_HOME/build-tools | sort -n | tail -1)
+          $ANDROID_HOME/build-tools/$BUILD_TOOLS_VERSION/apksigner sign --ks temp_key.keystore --ks-pass pass:temp_password build/app/outputs/flutter-apk/app-release.apk
         
       - name: Upload APK Artifact
         uses: actions/upload-artifact@v4
         with:
-          name: SimpleWOL-Installable-APK
+          name: SimpleWOL-Release-APK
           path: build/app/outputs/flutter-apk/app-release.apk
