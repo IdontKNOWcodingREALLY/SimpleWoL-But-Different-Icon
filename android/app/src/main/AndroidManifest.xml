@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.idontknowcodingreally.simplewolbutdifferenticon">
    <application
-        android:label="Simple WoL But Different Icon"
+        android:label="Simple WoL"
         android:name="${applicationName}"
         android:icon="@mipmap/launcher_icon">
         <activity
