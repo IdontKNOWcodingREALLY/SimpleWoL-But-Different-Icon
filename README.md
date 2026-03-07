@@ -3,6 +3,8 @@
 
 > **Note:** ok so I need you to listen this repo is a hot garbage so if you want the app sure take it will work good and have different icon, but only if you use square icon won't work good for you use if you use circle icon I don't think I will do anything in this as it works for me.
 
+>**Note** this project is vibe coded via clankers 🤖
+
 >**Special mention**: for the <a href="https://www.flaticon.com/free-icons/ethernet" title="ethernet icons">Ethernet icons created by Talha Dogar - Flaticon</a>. 
 
 <p float="center">
