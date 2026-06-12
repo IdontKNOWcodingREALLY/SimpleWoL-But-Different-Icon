@@ -40,56 +40,46 @@ class _AboutPageState extends State<AboutPage> {
     initWifiAddress();
   }
 
-  @override
-  void didChangeDependencies() {
-    super.didChangeDependencies();
-    // not in initSate because buildContext is needed
-    initPlatformState();
-  }
-
-  Future<void> initPlatformState() async {
+Future<void> initPlatformState() async {
     var deviceData = <String, dynamic>{};
+
+    // Grab all translations before any async gaps!
+    final errorWeb = AppLocalizations.of(context)!.aboutWebPlatformError;
+    final errorFuchsia = AppLocalizations.of(context)!.aboutFuchsiaPlatformError;
+    final errorLinux = AppLocalizations.of(context)!.aboutLinuxPlatformError;
+    final errorMac = AppLocalizations.of(context)!.aboutMacOSPlatformError;
+    final errorWindows = AppLocalizations.of(context)!.aboutWindowsPlatformError;
+    final errorNoPlatform = AppLocalizations.of(context)!.aboutNoPlatformDetected;
 
     try {
       if (kIsWeb) {
-        deviceData = <String, dynamic>{
-          'Error:': AppLocalizations.of(context)!.aboutWebPlatformError
-        };
+        deviceData = <String, dynamic>{'Error:': errorWeb};
       } else {
         switch (defaultTargetPlatform) {
           case TargetPlatform.android:
-            deviceData =
-                _readAndroidBuildData(await deviceInfoPlugin.androidInfo);
+            final build = await deviceInfoPlugin.androidInfo;
+            deviceData = _readAndroidBuildData(build);
             break;
           case TargetPlatform.iOS:
-            deviceData = _readIosDeviceInfo(await deviceInfoPlugin.iosInfo);
+            final data = await deviceInfoPlugin.iosInfo;
+            deviceData = _readIosDeviceInfo(data);
             break;
           case TargetPlatform.fuchsia:
-            deviceData = <String, dynamic>{
-              'Error:': AppLocalizations.of(context)!.aboutFuchsiaPlatformError
-            };
+            deviceData = <String, dynamic>{'Error:': errorFuchsia};
             break;
           case TargetPlatform.linux:
-            deviceData = <String, dynamic>{
-              'Error:': AppLocalizations.of(context)!.aboutLinuxPlatformError
-            };
+            deviceData = <String, dynamic>{'Error:': errorLinux};
             break;
           case TargetPlatform.macOS:
-            deviceData = <String, dynamic>{
-              'Error:': AppLocalizations.of(context)!.aboutMacOSPlatformError
-            };
+            deviceData = <String, dynamic>{'Error:': errorMac};
             break;
           case TargetPlatform.windows:
-            deviceData = <String, dynamic>{
-              'Error:': AppLocalizations.of(context)!.aboutWindowsPlatformError
-            };
+            deviceData = <String, dynamic>{'Error:': errorWindows};
             break;
         }
       }
     } on PlatformException {
-      deviceData = <String, dynamic>{
-        'Error:': AppLocalizations.of(context)!.aboutNoPlatformDetected
-      };
+      deviceData = <String, dynamic>{'Error:': errorNoPlatform};
     }
 
     if (!mounted) return;
