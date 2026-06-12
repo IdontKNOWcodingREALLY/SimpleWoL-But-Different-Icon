@@ -54,7 +54,7 @@ class ThemeSwitcher extends StatelessWidget {
   }
 }
 
-Widget getIconChip({name = String}) {
+Widget getIconChip({required String name}) {
   return IntrinsicWidth(
     child: Row(
       children: [
