@@ -42,20 +42,20 @@ dependencies:
 
 
   multicast_dns: ^0.3.2+3
-  network_tools: ^3.0.0+3
-  dart_ping: ^8.0.1
+  network_tools: ^4.0.3
+  dart_ping: ^9.0.1
   dart_ping_ios: ^3.0.0
-  network_info_plus: ^3.0.2
+  network_info_plus: ^6.0.0
   path_provider: ^2.1.5
-  uuid: ^3.0.7
+  uuid: ^4.0.0
   wake_on_lan: ^3.2.0
-  share_plus: ^7.0.2
-  file_picker: ^5.2.7
+  share_plus: ^10.0.0
+  file_picker: ^8.0.0
   url_launcher: ^6.3.2
   adaptive_theme: ^3.2.0
-  package_info_plus: ^4.0.2
+  package_info_plus: ^8.0.0
   rich_text_controller: ^1.4.2
-  device_info_plus: ^9.0.2
+  device_info_plus: ^11.0.0
 
 dev_dependencies:
 
