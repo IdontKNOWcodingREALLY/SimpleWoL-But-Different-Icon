@@ -124,7 +124,7 @@ class _SettingsPageState extends State<SettingsPage> {
     List<StorageDevice> importedDevices = [];
     if (file != null) {
       String fileExt = file.path.split('.').last;
-      if (fileExt != 'json' && context.mounted) {
+      if (fileExt != 'json' && mounted) {
         showDialog(
             context: context,
             builder: (BuildContext context) {
@@ -147,7 +147,7 @@ class _SettingsPageState extends State<SettingsPage> {
         importedDevices =
             jsonData.map((item) => StorageDevice.fromJson(item)).toList();
       } on FileSystemException {
-        if (context.mounted) {
+        if (mounted) {
           showDialog(
               context: context,
               builder: (BuildContext context) {
@@ -165,7 +165,7 @@ class _SettingsPageState extends State<SettingsPage> {
         }
         return;
       }
-      if (context.mounted) {
+      if (mounted) {
         showDialog(
             context: context,
             builder: (BuildContext context) {
