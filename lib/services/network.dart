@@ -6,7 +6,7 @@ import 'package:simple_wake_on_lan/constants.dart';
 import 'dart:io';
 import 'package:wake_on_lan/wake_on_lan.dart';
 import 'data.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:simple_wake_on_lan/gen/l10n/app_localizations.dart';
 
 Stream<NetworkDevice> findDevicesInNetwork(
   String networkPrefix,

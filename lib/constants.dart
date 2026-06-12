@@ -1,7 +1,7 @@
 import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:simple_wake_on_lan/widgets/chip_cards.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:simple_wake_on_lan/gen/l10n/app_localizations.dart';
 
 class AppConstants {
   /// Navigation Bar Icons

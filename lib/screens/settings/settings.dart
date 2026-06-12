@@ -9,7 +9,7 @@ import '../../widgets/chip_cards.dart';
 import '../../widgets/layout_elements.dart';
 import '../../widgets/universal_ui_components.dart';
 import 'data_ops.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:simple_wake_on_lan/gen/l10n/app_localizations.dart';
 
 class SettingsPage extends StatefulWidget {
   const SettingsPage({super.key, required this.title});

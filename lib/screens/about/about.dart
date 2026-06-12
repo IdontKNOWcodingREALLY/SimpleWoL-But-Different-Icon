@@ -6,7 +6,7 @@ import 'package:package_info_plus/package_info_plus.dart';
 import 'package:device_info_plus/device_info_plus.dart';
 import 'dart:developer';
 import 'package:url_launcher/url_launcher.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:simple_wake_on_lan/gen/l10n/app_localizations.dart';
 import '../../constants.dart';
 import '../../widgets/layout_elements.dart';
 

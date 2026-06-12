@@ -5,7 +5,7 @@ import 'package:simple_wake_on_lan/constants.dart';
 import 'package:simple_wake_on_lan/screens/home/discover.dart';
 import '../../widgets/layout_elements.dart';
 import 'bottom_sheet_form.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:simple_wake_on_lan/gen/l10n/app_localizations.dart';
 import '../../services/database.dart';
 import '../../services/data.dart';
 import '../../services/network.dart';

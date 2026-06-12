@@ -7,7 +7,7 @@ import 'package:simple_wake_on_lan/screens/about/about.dart';
 import 'package:simple_wake_on_lan/screens/home/home.dart';
 import 'package:simple_wake_on_lan/screens/settings/settings.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:simple_wake_on_lan/gen/l10n/app_localizations.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
