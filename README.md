@@ -1,3 +1,5 @@
+<img src="docs/icon.png" width="70" align="right"/>
+
 # SimpleWoL-But-Different-Icon
 > **Note:** This is a personal modified version of the original [SimpleWoL](https://github.com/herzhenr/simple-wake-on-lan) project created by [herzhenr](https://github.com/herzhenr).
 
