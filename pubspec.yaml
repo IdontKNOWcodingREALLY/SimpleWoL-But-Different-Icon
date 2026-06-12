@@ -38,7 +38,7 @@ dependencies:
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
-  cupertino_icons: ^1.0.2
+  cupertino_icons: ^1.0.8
 
 
   multicast_dns: ^0.3.2+3
@@ -46,12 +46,12 @@ dependencies:
   dart_ping: ^8.0.1
   dart_ping_ios: ^3.0.0
   network_info_plus: ^3.0.2
-  path_provider: ^2.0.14
+  path_provider: ^2.1.5
   uuid: ^3.0.7
   wake_on_lan: ^3.2.0
   share_plus: ^7.0.2
   file_picker: ^5.2.7
-  url_launcher: ^6.1.10
+  url_launcher: ^6.3.2
   adaptive_theme: ^3.2.0
   package_info_plus: ^4.0.2
   rich_text_controller: ^1.4.2
@@ -64,10 +64,10 @@ dev_dependencies:
   # activated in the `analysis_options.yaml` file located at the root of your
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
-  flutter_lints: ^2.0.0
+  flutter_lints: ^6.0.0
 
   # Generate App Icon for Android and iOS
-  flutter_launcher_icons: "^0.13.1"
+  flutter_launcher_icons: "^0.14.1"
 
   change_app_package_name: ^1.1.0
   test: ^1.22.0
