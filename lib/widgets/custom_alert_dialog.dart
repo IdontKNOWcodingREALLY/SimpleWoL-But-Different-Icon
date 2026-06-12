@@ -28,7 +28,7 @@ class CustomDialogBox extends StatelessWidget {
     );
   }
 
-  contentBox(context) {
+  Widget contentBox(BuildContext context) {
     return Stack(
       children: <Widget>[
         Container(
