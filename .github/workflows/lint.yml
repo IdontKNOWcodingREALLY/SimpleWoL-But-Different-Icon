@@ -22,9 +22,7 @@ jobs:
         run: dart pub get
 
       - name: Generate App Localizations
-        run:  |
-              flutter clean
-              flutter gen-l10n
+        run: flutter gen-l10n
 
       - name: Get dependencies again after code-gen
         run: flutter pub get
