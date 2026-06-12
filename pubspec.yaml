@@ -44,7 +44,6 @@ dependencies:
   multicast_dns: ^0.3.2+3
   network_tools: ^4.0.3
   dart_ping: ^9.0.1
-  dart_ping_ios: ^3.0.0
   network_info_plus: ^6.0.0
   path_provider: ^2.1.5
   uuid: ^4.0.0
