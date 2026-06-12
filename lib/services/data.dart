@@ -34,19 +34,13 @@ class StorageDevice extends Device {
 
   StorageDevice(
       {required this.id,
-      required hostName,
-      required ipAddress,
-      required macAddress,
-      wolPort,
+      required super.hostName,
+      required super.ipAddress,
+      required super.macAddress,
+      super.wolPort,
       this.isOnline,
       required this.modified,
-      deviceType})
-      : super(
-            hostName: hostName,
-            ipAddress: ipAddress,
-            macAddress: macAddress,
-            wolPort: wolPort,
-            deviceType: deviceType);
+      super.deviceType});
 
   @override
   int compareTo(NetworkDevice other) {
