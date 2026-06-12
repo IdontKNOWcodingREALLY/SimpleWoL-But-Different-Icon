@@ -117,6 +117,8 @@ Stream<Message> sendWolPackage(
   // get localisation string beforehand to avoid using BuildContexts across async gaps
   String homeWolCardSendWolSuccess =
       AppLocalizations.of(context)!.homeWolCardSendWolSuccess(ip);
+  String homeWolCardSendWolFail = 
+      AppLocalizations.of(context)!.homeWolCardSendWolFail(ip);
   String homeWolCardPingInfo =
       AppLocalizations.of(context)!.homeWolCardPingInfo;
   String homeWolCardPingSuccess =
@@ -133,7 +135,7 @@ Stream<Message> sendWolPackage(
     yield Message(text: homeWolCardSendWolSuccess, type: MsgType.check);
   } catch (e) {
     yield Message(
-        text: AppLocalizations.of(context)!.homeWolCardSendWolFail(ip),
+        text: homeWolCardSendWolFail,
         type: MsgType.error);
   }
 
