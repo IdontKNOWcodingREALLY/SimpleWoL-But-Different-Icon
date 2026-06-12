@@ -227,8 +227,8 @@ class _HomePageState extends State<HomePage> {
   /// [devices] is the list of devices
   /// [deviceId] is the changed device id. This devices gets pinged additionally to the background timer to get the current status.
   /// If it is set to null, no device gets pinged (e.g. if device gets deleted, this devices doesn't need to get pinged)
-  updateDevicesList(List<StorageDevice> devices, String? deviceId) {
-    setState(() {
+void updateDevicesList(List<StorageDevice> devices, String? deviceId) {
+  setState(() {
       _devicesRaw = devices;
       filterDevicesByType();
       sortDevices();
@@ -374,8 +374,8 @@ class _HomePageState extends State<HomePage> {
   }
 
   /// returns a single device card
-  buildDevice(StorageDevice device) {
-    String title;
+Widget buildDevice(StorageDevice device) {
+  String title;
     String? subtitle;
     if (device.hostName != "") {
       title = device.hostName;
@@ -395,8 +395,8 @@ class _HomePageState extends State<HomePage> {
   }
 
   /// shows the alert dialog for waking and editing the device
-  showDeviceOptionsDialog({required StorageDevice device}) {
-    String title = "", subtitle1 = "", subtitle2 = "";
+void showDeviceOptionsDialog({required StorageDevice device}) {
+  String title = "", subtitle1 = "", subtitle2 = "";
     if (device.hostName != "") {
       title = device.hostName;
       subtitle1 = "${AppConstants.ipText}: ${device.ipAddress}";
