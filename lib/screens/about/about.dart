@@ -40,6 +40,17 @@ class _AboutPageState extends State<AboutPage> {
     initWifiAddress();
   }
 
+  bool _platformStateInitialized = false;
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    if (!_platformStateInitialized) {
+      _platformStateInitialized = true;
+      initPlatformState();
+    }
+  }
+
 Future<void> initPlatformState() async {
     var deviceData = <String, dynamic>{};
 
@@ -180,14 +191,14 @@ Future<void> initPlatformState() async {
         child: InkWell(
             borderRadius: AppConstants.borderRadius,
             child: ListTile(
-              title: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: _deviceData.keys.map((String property) {
-                  return Text(_deviceData[property].toString());
-                }).toList(),
+              title: Text(
+                _deviceData['model']?.toString() ??
+                    _deviceData['utsname.nodename']?.toString() ??
+                    _deviceData['Error:']?.toString() ??
+                    '',
               ),
               subtitle: Text(
-                "${AppConstants.ipText}: $_wifiAddress",
+                "${AppConstants.ipText}: ${_wifiAddress ?? '...'}",
                 style: Theme.of(context).textTheme.bodySmall,
               ),
               minLeadingWidth: 0,
