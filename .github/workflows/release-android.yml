@@ -8,6 +8,8 @@ on:
 jobs:
   release-android:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       - uses: actions/checkout@v4
       
@@ -25,7 +27,19 @@ jobs:
           cache: false
           
       - name: Get dependencies
-        run: flutter pub get
+        run: flutter pub upgrade
+
+      - name: Commit regenerated lockfile
+        run: |
+          if ! git diff --quiet -- pubspec.lock; then
+            git config user.name "github-actions[bot]"
+            git config user.email "github-actions[bot]@users.noreply.github.com"
+            git add pubspec.lock
+            git commit -m "ci: regenerate pubspec.lock via flutter pub upgrade"
+            git push
+          else
+            echo "pubspec.lock unchanged, nothing to commit"
+          fi
 
       - name: Update App Icons
         run: dart run flutter_launcher_icons
