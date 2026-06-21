@@ -1,10 +1,10 @@
-- [ ] Appearance
+- [x] Appearance
   - [x] Theme (System, Light, Dark)
-  - [ ] Color Palette (Auto (Material You on Android) or different color palettes)
-- [ ] Display Version Info
-- [ ] Contact / About Developer Info
+  - ~~Color Palette (Auto (Material You on Android) or different color palettes)~~
+- [x] Display Version Info
+- ~~Contact / About Developer Info~~ (if you want to contact me just do a comment anywhere at repo)
 - [ ] Option to select if wol should be sent as broadcast
 - [ ] Display info dialogs (e.g. how to get mac address, what is wol in general, how does it work)
-- [ ] Import arp table (e.g. generated from a linux pc)
-- [ ] mac address: automatically add delimiter ":" after every 2 characters
-- [ ] ip address: also allow hostnames (wol package now allows for hostname resolution)
+- ~~Import arp table (e.g. generated from a linux pc)~~
+- [x] mac address: automatically add delimiter ":" after every 2 characters
+- [x] ip address: also allow hostnames (wol package now allows for hostname resolution)
