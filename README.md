@@ -63,7 +63,7 @@ The app stores the added devices in a `json` file which can be exported and impo
 
 ## Download
 
-- You can download the latest version of the app from [GitHub Releases]()
+- You can download the latest version of the app from [GitHub Releases](https://github.com/IdontKNOWcodingREALLY/SimpleWoL-But-Different-Icon/releases)
 
 ## Architecture
 The app is built using the [Flutter](https://flutter.dev/) framework. It uses the [Material 3](https://m3.material.io) design system from Google.
